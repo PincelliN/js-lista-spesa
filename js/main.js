@@ -5,9 +5,9 @@
 const Spesa = [
   "mela",
   "pera",
-  "kiwi",
+  "Frutta-secca",
   "insalata",
-  "cipolle",
+  "Burro",
   "zucchine",
   "pasta",
   "pollo",
@@ -15,28 +15,65 @@ const Spesa = [
   "cavallo",
   "merluzzo",
   "riso",
-  "cereali",
+  "olio",
 ];
+
+//var carbo ,grassi e proteine
+
+const Carbo = [
+  "mela",
+  "pera",
+  "kiwi",
+  "insalata",
+  "riso",
+  "pasta",
+  "cipolle",
+  "zucchine",
+];
+const Proteine = ["pollo", "pesce-spada", "cavallo", "merluzzo"];
+
+const Grassi = ["olio", "Burro", "Frutta-secca"];
 
 //creo una variabile contenitore
 
 const Box = document.getElementById("lista-spesa");
 
+const BoxCarbo = document.getElementById("lista-carbo");
+const BoxProteine = document.getElementById("lista-proteine");
+const BoxGrassi = document.getElementById("lista-grassi");
 
 // variabile  per indice
 let i = 0;
 
 //ciclo while
 
-while ( i < Spesa.length) {  
-    // variabile elementi lista
-   let item = Spesa[i];
+while (i < Spesa.length) {
+  // variabile elementi lista
+  let item = Spesa[i];
 
-    console.log(Spesa[i]);
+    console.log(item);
+// provo lo switch
 
-    //Inserisco in box questo pezzo di html
-     Box.innerHTML+=`<li>${item}</li>`; 
-     //incremento i di 1 ad ogni ciclo
-    i++; 
+switch (item) {
+    case `Carbo.includes("item")` :
+        BoxCarbo.innerHTML = `<li>${item}</li>`;
+        break;
+    case `Proteine.includes("item")`:
+        BoxProteine.innerHTML = `<li>${item}</li>`;
+    break;
+    case `Grassi.includes("item")`:
+        BoxGrassi.innerHTML = `<li>${item}</li>`;
+    default:
+        //Inserisco in box questo pezzo di html
+         Box.innerHTML += `<li>${item}</li>`;
+        //incremento i di 1 ad ogni ciclo
+        break;
 }
 
+
+
+ 
+
+  
+  i++;
+}

@@ -54,21 +54,21 @@ while (i < Spesa.length) {
     console.log(item);
 // provo lo switch
 
-switch (item) {
-    case `Carbo.includes("item")` :
-        BoxCarbo.innerHTML = `<li>${item}</li>`;
-        break;
-    case `Proteine.includes("item")`:
-        BoxProteine.innerHTML = `<li>${item}</li>`;
-    break;
-    case `Grassi.includes("item")`:
-        BoxGrassi.innerHTML = `<li>${item}</li>`;
-    default:
+
+
+
+if (Carbo.includes(item)) {
+    BoxCarbo.innerHTML += `<li>${item}</li>`;
+} else if (Proteine.includes(item)) {
+    BoxProteine.innerHTML += `<li>${item}</li>`;
+}else if (Grassi.includes(item)) {
+    BoxGrassi.innerHTML += `<li>${item}</li>`;
+} 
         //Inserisco in box questo pezzo di html
          Box.innerHTML += `<li>${item}</li>`;
         //incremento i di 1 ad ogni ciclo
-        break;
-}
+       
+
 
 
 
